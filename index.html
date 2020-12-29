@@ -5,11 +5,8 @@
        <title>Painting</title>
        <meta http-equiv="Content-Type" content="text/plain;text/javascript;text/css;charset=utf-8" />
        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script type="module" src="./index.js"></script>
        <script>
-
-        import * as tf from '@tensorflow/tfjs';
-
-        const model = await tf.loadLayersModel('https://mattaupe.github.io/models/model.json');
 
         let draw =  {
         init:function(){
@@ -86,9 +83,8 @@
         test:function(){
             var image = new Image();
             image = canvas.toDataURL("image/png");
-            console.log(image);
-            const prediction = model.predict(image);
-            console.log(prediction);
+            console.log(image);                    
+            console.log(Usemodel(image));
         }
         }
  
@@ -100,10 +96,10 @@
 
     </script>
    </head>
-   <body>
-       
+   <body>       
         <div class="cadre" id="canvasDiv"></div>
         <button id="clearCanvasSimple" onclick="draw.clear()" width=100>Effacer</button><br>
         <button width=100 onclick="draw.test()" >Tester</button>
    </body>
+   
 </html>
