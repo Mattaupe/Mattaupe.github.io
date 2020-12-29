@@ -83,8 +83,9 @@
         test:function(){
             var image = new Image();
             image = canvas.toDataURL("image/png");
-            console.log(image);                    
-            console.log(Usemodel(image));
+            console.log(image);  
+            const prediction = model.predict(image);                   
+            console.log(prediction);
         }
         }
  
