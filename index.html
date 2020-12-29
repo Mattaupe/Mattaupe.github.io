@@ -84,7 +84,11 @@
             this.clickDrag = new Array();
         },
         test:function(){
-            console.log("Test");
+            var image = new Image();
+            image = canvas.toDataURL("image/png");
+            console.log(image);
+            const prediction = model.predict(image);
+            console.log(prediction);
         }
         }
  
@@ -97,6 +101,7 @@
     </script>
    </head>
    <body>
+       
         <div class="cadre" id="canvasDiv"></div>
         <button id="clearCanvasSimple" onclick="draw.clear()" width=100>Effacer</button><br>
         <button width=100 onclick="draw.test()" >Tester</button>
