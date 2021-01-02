@@ -13,10 +13,11 @@
         <div class="cadre" id="canvasDiv"></div>      
         <button onclick="predic()">Tester</button>
         <script>
+            const model = await tf.loadLayerModel("https://mattaupe.github.io/models/model.json");
             function predic(){   
     
                 alert("TEST");
-                const model = await tf.loadLayerModel("https://mattaupe.github.io/models/model.json");
+                
                 const prediction = model.predict("test.PNG");  
 
                 console.log(prediction);
