@@ -6,12 +6,20 @@
         <script type="module"src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.8.2">
             import * as tf from '@tensorflow/tfjs';
             const model = await tf.loadLayerModel("https://mattaupe.github.io/models/model.json"); 
+
+            function predic(){   
+    
+                alert("TEST");
+
+                const prediction = model.predict("test.PNG");  
+    
+                console.log(prediction);
+            }           
         </script>
         
    </head>
    <body>       
-        <div class="cadre" id="canvasDiv"></div>  
-        <script type="text/javascript" src="index.js"></script>     
+        <div class="cadre" id="canvasDiv"></div>      
         <button onclick="predic()">Tester</button>
    </body>
    
