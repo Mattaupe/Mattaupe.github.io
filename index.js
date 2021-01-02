@@ -1,6 +1,6 @@
 function predic(){   
     
-    const example = tf.fromPixels(webcamElement);  // for example
+    const example = tf.fromPixels("test.PNG");  // for example
     const prediction = model.predict(example);  
     
     console.log(prediction);
