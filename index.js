@@ -1,10 +1,9 @@
 import * as tf from '@tensorflow/tfjs';
 
-async function Usemodel(img) {
+const model = await tf.loadLayerModel('https://mattaupe.github.io/models/model.json'); 
     
+const example = tf.fromPixels(webcamElement);  // for example
+const prediction = model.predict(example);  
 
-    const model = await tf.loadLayerModel('https://mattaupe.github.io/models/model.json'); 
-    
-    const prediction = model.predict(img);   
-    return prediction;  
-}
+console.log(prediction);
+
