@@ -8,10 +8,10 @@
    <body>       
         <div class="cadre" id="canvasDiv"></div>      
         <button onclick="predic()">Tester</button>
-        <script type="module">            
+        <script type="module">         
             async function predic(){       
-                import * as tf from '@tensorflow/tfjs';
-                const model = await tf.loadLayerModel("https://mattaupe.github.io/models/model.json");   
+                //import * as tf from '@tensorflow/tfjs';
+                model = await tf.loadLayerModel("https://mattaupe.github.io/models/model.json");   
                 const prediction = model.predict("test.PNG"); 
                 alert(prediction);         
 
